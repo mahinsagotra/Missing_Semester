@@ -1,3 +1,0 @@
-function polo () {
-	cd $currentpath
-}
