@@ -1,0 +1,11 @@
+1. Find all the files
+
+find . -type f
+
+2. list all the files in order the modification time
+
+find . -type f | xargs ls -lt
+
+3. get the first line
+
+find . -type f | xargs ls -lt | head -n 1 
