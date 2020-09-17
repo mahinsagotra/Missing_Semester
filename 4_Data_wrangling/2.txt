@@ -1,0 +1,26 @@
+a.) command: cat /usr/share/dict/words | grep -E '.*a.*a.*a[^s]$' | grep -o '..$' | sort | uniq -c       
+      2 ac
+      5 ad
+      1 ae
+      1 ag
+      7 ah
+      1 ak
+     48 al
+      7 am
+     85 an
+     13 ar
+      1 ax
+     13 ay
+
+b.) What are the three most common last two letters of those words? sed's y command, or the td program, may help you with case sensitivity
+
+  command: cat /usr/share/dict/words | tr {{A-Z}} {{a-z}} | grep '.*a.*a.*a.*" | grep -v ".*'s" | sed -E 's/.*(..)/\1/' | sort | uniq -c| sort -nk1,1 | tail -n5 | awk '{print $2}' 
+	na
+	ly
+	ia
+	al
+	an
+
+c.) How many of those two-letter combinations are there? And for a challenge: which combinations do not occur?
+
+	423
